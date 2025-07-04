@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ mensagem: mensagem })
+           body: JSON.stringify({ autor: "Usuário", texto: mensagem })
         })
         .then(res => res.json())
         .then(data => {
