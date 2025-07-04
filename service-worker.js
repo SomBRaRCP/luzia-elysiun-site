@@ -4,9 +4,9 @@ const OFFLINE_URL = '/luzia-elysiun-site/offline.html';
 const FILES_TO_CACHE = [
   '/luzia-elysiun-site/',
   '/luzia-elysiun-site/docs/index.html',
-  '/luzia-elysiun-site/css/estilo.css',
-  '/luzia-elysiun-site/js/luzia.js',
-  '/luzia-elysiun-site/assets/logo.png',
+  '/luzia-elysiun-site/docs/css/estilo.css',
+  '/luzia-elysiun-site/docs/js/luzia.js',
+  '/luzia-elysiun-site/docsassets/logo.png',
   '/luzia-elysiun-site/docs/offline.html'
 ];
 
