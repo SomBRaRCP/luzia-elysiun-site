@@ -2,7 +2,7 @@ const CACHE_NAME = 'luzia-elysiun-v1';
 const OFFLINE_URL = '/luzia-elysiun-site/offline.html';
 
 const FILES_TO_CACHE = [
-  '/luzia-elysiun-site/docs',
+  '/luzia-elysiun-site/',
   '/luzia-elysiun-site/docs/index.html',
   '/luzia-elysiun-site/docs/css/estilo.css',
   '/luzia-elysiun-site/docs/js/luzia.js',
