@@ -15,7 +15,7 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       console.log('[Luzia] 📦 Arquivos em cache...');
-      return cache.addAll(URLS_TO_CACHE);
+     return cache.addAll(FILES_TO_CACHE);
     })
   );
 });
