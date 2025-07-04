@@ -6,7 +6,7 @@ const FILES_TO_CACHE = [
   '/luzia-elysiun-site/docs/index.html',
   '/luzia-elysiun-site/docs/css/estilo.css',
   '/luzia-elysiun-site/docs/js/luzia.js',
-  '/luzia-elysiun-site/docsassets/logo.png',
+  '/luzia-elysiun-site/docs/assets/logo.png',
   '/luzia-elysiun-site/docs/offline.html'
 ];
 
