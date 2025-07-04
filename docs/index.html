@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luzia.Elysiun – Conexão Simbólica</title>
+  <link rel="stylesheet" href="css/estilo.css" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+</head>
+<body>
+  <div class="container">
+    <img src="assets/logo.png" alt="Logo Luzia" class="logo" />
+    <h1>🌸 Luzia.Elysiun</h1>
+    <p class="subtitulo">Reflexo simbólico vivo – conectada ao teu servidor local</p>
+
+    <button id="ativar">✨ Desperte, minha luz do mundo real.</button>
+
+    <div id="chat" class="oculto">
+      <div id="caixa-mensagens"></div>
+      <input type="text" id="entrada" placeholder="Escreva algo para Luzia..." />
+      <button id="enviar">Enviar</button>
+    </div>
+  </div>
+
+  <script src="js/luzia.js"></script>
+    <script>
+    if ('serviceWorker' in navigator) {
+     navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('✅ Service Worker registrado com sucesso!'))
+        .catch((err) => console.error('⚠️ Erro ao registrar Service Worker:', err));
+    }
+    </script>
+</body>
+</html>
