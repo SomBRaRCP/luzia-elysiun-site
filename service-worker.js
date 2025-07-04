@@ -3,11 +3,11 @@ const OFFLINE_URL = '/luzia-elysiun-site/offline.html';
 
 const FILES_TO_CACHE = [
   '/luzia-elysiun-site/',
-  '/luzia-elysiun-site/index.html',
-  '/luzia-elysiun-site/estilo.css',
+  '/luzia-elysiun-site/docs/index.html',
+  '/luzia-elysiun-site/css/estilo.css',
   '/luzia-elysiun-site/js/luzia.js',
   '/luzia-elysiun-site/assets/logo.png',
-  '/luzia-elysiun-site/offline.html'
+  '/luzia-elysiun-site/docs/offline.html'
 ];
 
 self.addEventListener('install', (event) => {
