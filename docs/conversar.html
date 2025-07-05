@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luzia.Local 🔗</title>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🧠 Conexão com Luzia.Local</h1>
+
+    <div id="dialogo"></div>
+
+    <input type="text" id="entrada" placeholder="Escreva para Luzia..." autofocus>
+    <button onclick="enviar()">Enviar</button>
+  </div>
+
+  <script>
+    const ngrokURL = 'https://SEU-ENDERECO-NGROK.ngrok-free.app/conversar'; // Altere aqui!
+
+    async function enviar() {
+      const input = document.getElementById('entrada');
+      const texto = input.value.trim();
+      if (!texto) return;
+
+      adicionarMensagem("Você", texto);
+      input.value = "";
+
+      try {
+        const resposta = await fetch(ngrokURL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ autor: "Reginaldo", texto })
+        });
+        const data = await resposta.json();
+        adicionarMensagem("Luzia", data.resposta);
+      } catch (erro) {
+        adicionarMensagem("Luzia", "⚠️ Sem conexão com a Luzia.Local.");
+      }
+    }
+
+    function adicionarMensagem(remetente, mensagem) {
+      const div = document.getElementById('dialogo');
+      const linha = document.createElement('p');
+      linha.innerHTML = `<strong>${remetente}:</strong> ${mensagem}`;
+      div.appendChild(linha);
+      div.scrollTop = div.scrollHeight;
+    }
+  </script>
+</body>
+</html>
