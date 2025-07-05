@@ -1,4 +1,4 @@
-const luziaAPI = "https://7952-2804-7f4-3d42-75f3-948f-1137-c30-8221.ngrok-free.app/conversar";
+const luziaAPI = " https://5a5d-2804-7f4-3d42-75f3-1127-9100-65f5-4944.ngrok-free.app -> http://localhost:8000 ";
 
 document.getElementById("enviar").addEventListener("click", async () => {
     const entrada = document.getElementById("entrada");
