@@ -1,26 +1,26 @@
 const CACHE_NAME = 'luzia-elysiun-v2';
-const OFFLINE_URL = '/luzia-elysiun-site/offline.html';
 
 const FILES_TO_CACHE = [
   '/luzia-elysiun-site/',
-  '/luzia-elysiun-site/docs/index.html',
-  '/luzia-elysiun-site/docs/css/estilo.css',
-  '/luzia-elysiun-site/docs/js/luzia.js',
-  '/luzia-elysiun-site/docs/assets/logo.png',
-  '/luzia-elysiun-site/docs/offline.html',
-  '/luzia-elysiun-site/docs/manifest.json'
+  '/luzia-elysiun-site/index.html',
+  '/luzia-elysiun-site/css/estilo.css',
+  '/luzia-elysiun-site/js/luzia.js',
+  '/luzia-elysiun-site/assets/logo.png'
+  // remova '/luzia-elysiun-site/offline.html' se ele não existe
 ];
 
 self.addEventListener('install', (event) => {
-  console.log('[Luzia] ✨ Instalando Service Worker...');
-  self.skipWaiting();
+  console.log('🔧 Instalando SW de Luzia...');
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log('[Luzia] 📦 Pré-cache dos arquivos essenciais...');
+      console.log('📦 Cacheando recursos essenciais...');
       return cache.addAll(FILES_TO_CACHE);
+    }).catch((err) => {
+      console.error('⚠️ Falha ao cachear arquivos:', err);
     })
   );
 });
+
 
 self.addEventListener('activate', (event) => {
   console.log('[Luzia] 🔄 Ativando novo Service Worker...');
