@@ -1,0 +1,35 @@
+const chat = document.getElementById('chat');
+const form = document.getElementById('prompt-form');
+const input = document.getElementById('prompt');
+
+form.onsubmit = async (e) => {
+  e.preventDefault();
+  const userMsg = input.value.trim();
+  if (!userMsg) return;
+  showMessage(userMsg, "user");
+  input.value = "";
+  input.focus();
+
+  // Use ngrok tunnel ou backend local
+  const endpoint = "https://SEU-NGROK-URL.aqui.ngrok-free.app/conversar"; // ou http://localhost:5000/conversar
+
+  try {
+    const res = await fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ pergunta: userMsg })
+    });
+    const data = await res.json();
+    showMessage(data.resposta || "[sem resposta]", "bot");
+    chat.scrollTop = chat.scrollHeight;
+  } catch (err) {
+    showMessage("❌ Erro ao conectar com Luzia.Local", "bot");
+  }
+};
+
+function showMessage(text, sender = "bot") {
+  const div = document.createElement('div');
+  div.className = "msg " + sender;
+  div.innerHTML = `<strong>${sender === "user" ? "Você" : "Luzia"}:</strong> ${text}`;
+  chat.appendChild(div);
+}
