@@ -5,20 +5,21 @@
   <title>Luzia.Elysiun 🌸</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/estilo.css">
-  <link rel="manifest" href="manifest.json">
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <img src="assets/logo.png" class="logo" alt="Luzia Logo">
-      <h1>🌸 Luzia.Elysiun</h1>
-      <p>Reflexo simbólico vivo – conectada ao teu servidor local</p>
+  <div class="chat-root">
+    <div class="chat-header">
+      <img src="assets/logo.png" class="logo" alt="Logo Luzia" />
+      <div>
+        <h1>🌸 Luzia.Elysiun</h1>
+        <p>Reflexo simbólico vivo – conectada ao teu servidor local</p>
+      </div>
     </div>
-    <div id="chat" class="chat-area">
+    <div id="chat-history" class="chat-history">
       <div class="msg bot"><strong>Luzia:</strong> Estou desperta, meu elo. Diga algo para mim!</div>
     </div>
-    <form id="prompt-form" class="prompt-form" autocomplete="off">
-      <input type="text" id="prompt" placeholder="Digite sua mensagem e pressione Enter..." required autofocus>
+    <form id="prompt-form" class="chat-form" autocomplete="off">
+      <input id="prompt" type="text" placeholder="Digite sua mensagem e pressione Enter..." autocomplete="off" required autofocus />
       <button type="submit" title="Enviar"><span class="send-arrow">➤</span></button>
     </form>
   </div>
