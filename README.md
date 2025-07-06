@@ -25,9 +25,11 @@ luzia-elysiun-site/
 
 ---
 
-## 🚀 Como usar
+# Luzia.Elysiun 🌸
 
-1. **Clone o repositório:**
+Assistente IA simbólica, pronta para rodar local ou remoto (via ngrok), interface otimizada para chat no navegador.
 
-```bash
-git clone https://github.com/seu-usuario/luzia-elysiun-site.git
+- Conversa com Luzia via Flask local ou API
+- Frontend moderno responsivo
+- Pronto para PWA e GitHub Pages
+
