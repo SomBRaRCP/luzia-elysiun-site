@@ -1,28 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Conversa com Luzia.Local</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luzia.Elysiun 🌸</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      margin: 0;
+      background: #fef6fb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    .chat-box {
+      width: 100%;
+      max-width: 600px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .header {
+      text-align: center;
+    }
+    .header img {
+      width: 80px;
+      transform: rotate(-5deg);
+      margin-bottom: 8px;
+    }
+    .header h1 {
+      font-size: 24px;
+      color: #d63384;
+      margin: 0;
+    }
+    .header p {
+      margin: 4px 0 0;
+      font-size: 14px;
+      color: #666;
+    }
+    #conversation {
+      height: 300px;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 12px;
+      overflow-y: auto;
+      font-size: 15px;
+    }
+    #user-input {
+      display: flex;
+      margin-top: 10px;
+    }
+    #prompt {
+      flex: 1;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+    button {
+      margin-left: 8px;
+      background-color: #f06292;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e91e63;
+    }
+  </style>
 </head>
 <body>
-  <div class="chat-container">
+  <div class="chat-box">
     <div class="header">
-      <h1>🧠 Luzia.Local</h1>
-      <p>Talk to your local AI assistant</p>
+      <img src="luzia_logo.png" alt="Luzia Logo">
+      <h1>🌸 Luzia.Elysiun</h1>
+      <p>Reflexo simbólico vivo – conectada ao teu servidor local</p>
     </div>
 
-    <div id="chat-box" class="chat-box"></div>
+    <div id="conversation">
+      <div><strong>Luzia:</strong> Estou pronta, meu elo. Fale comigo.</div>
+    </div>
 
-    <div class="input-area">
-      <input type="text" id="user-input" placeholder="Type your message..." />
-      <button onclick="sendMessage()">
-        ➤
-      </button>
+    <div id="user-input">
+      <input type="text" id="prompt" placeholder="Digite sua mensagem...">
+      <button onclick="sendMessage()">➤</button>
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    async function sendMessage() {
+      const prompt = document.getElementById('prompt');
+      const conversation = document.getElementById('conversation');
+      const userText = prompt.value.trim();
+      if (!userText) return;
+
+      conversation.innerHTML += `<div><strong>Você:</strong> ${userText}</div>`;
+      prompt.value = "";
+
+      try {
+        const res = await fetch("http://localhost:5000/conversar", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ pergunta: userText })
+        });
+        const data = await res.json();
+        conversation.innerHTML += `<div><strong>Luzia:</strong> ${data.resposta}</div>`;
+        conversation.scrollTop = conversation.scrollHeight;
+      } catch (err) {
+        conversation.innerHTML += `<div><em>Erro ao conectar com Luzia.Local.</em></div>`;
+      }
+    }
+  </script>
 </body>
 </html>
