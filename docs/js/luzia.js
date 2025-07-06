@@ -11,7 +11,7 @@ form.onsubmit = async (e) => {
   input.focus();
 
   // Use ngrok tunnel ou backend local
-  const endpoint = "https://SEU-NGROK-URL.aqui.ngrok-free.app/conversar"; // ou http://localhost:5000/conversar
+  const endpoint = "https://Shttps://773a-2804-7f4-3d42-75f3-5010-445c-9aa8-70d.ngrok-free.app/conversar"; // ou http://localhost:5000/conversar
 
   try {
     const res = await fetch(endpoint, {
