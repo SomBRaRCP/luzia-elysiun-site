@@ -1,10 +1,9 @@
-/* estilo.css - Estilo simbólico e moderno para Luzia.Elysiun */
-
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom right, #ffe6f0, #f0f8ff);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  color: #222;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,102 +11,85 @@ body {
 }
 
 .container {
-  width: 100%;
-  max-width: 600px;
+  width: 95%;
+  max-width: 500px;
   background: white;
   border-radius: 16px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  gap: 16px;
+  position: relative;
 }
 
-.header {
-  background: #ff69b4;
-  color: white;
-  padding: 16px;
-  font-size: 1.4rem;
+.logo {
+  width: 64px;
+  height: 64px;
+  align-self: center;
+  border-radius: 50%;
+}
+
+h1 {
   text-align: center;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
+  color: #444;
+  font-size: 1.4rem;
+  margin: 0;
 }
 
-.header img {
-  height: 32px;
-  transform: rotate(-10deg);
-}
-
-.chat {
-  flex: 1;
-  padding: 16px;
+#chat-box {
+  height: 300px;
   overflow-y: auto;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 0.95rem;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  background: #fff6fa;
+  gap: 8px;
 }
 
-.message {
-  max-width: 75%;
-  padding: 12px 16px;
-  border-radius: 16px;
-  font-size: 1rem;
+.mensagem {
+  padding: 8px 12px;
+  border-radius: 12px;
+  max-width: 80%;
   line-height: 1.4;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 
-.user {
+.voce {
   align-self: flex-end;
-  background: #dff6ff;
-  color: #004a66;
+  background-color: #d1ecf1;
+  color: #0c5460;
 }
 
 .luzia {
   align-self: flex-start;
-  background: #ffd3e0;
-  color: #662244;
-}
-
-.input-container {
-  display: flex;
-  border-top: 1px solid #eee;
-  background: white;
-  padding: 12px;
+  background-color: #fce4ec;
+  color: #6f0b3d;
 }
 
 input[type="text"] {
-  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
   border: 1px solid #ccc;
-  border-radius: 20px;
-  padding: 10px 16px;
+  width: calc(100% - 22px);
   font-size: 1rem;
   outline: none;
 }
 
 button {
-  margin-left: 10px;
-  background: #ff69b4;
-  border: none;
-  border-radius: 20px;
+  background-color: #6a1b9a;
   color: white;
-  font-size: 1.2rem;
-  padding: 10px 16px;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s;
+  font-size: 1rem;
+  transition: background 0.3s ease;
 }
 
 button:hover {
-  background: #ff4fa4;
-}
-
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #ffc0cb;
-  border-radius: 3px;
+  background-color: #8e24aa;
 }
