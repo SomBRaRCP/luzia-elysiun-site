@@ -1,4 +1,4 @@
-const chat = document.getElementById('chat');
+const chat = document.getElementById('chat-history');
 const form = document.getElementById('prompt-form');
 const input = document.getElementById('prompt');
 
@@ -10,8 +10,8 @@ form.onsubmit = async (e) => {
   input.value = "";
   input.focus();
 
-  // Use ngrok tunnel ou backend local
-  const endpoint = "http://localhost:5000/conversar"; // ou https://https://773a-2804-7f4-3d42-75f3-5010-445c-9aa8-70d.ngrok-free.app/conversar
+  // Substitua pela sua URL ngrok se não for local
+  const endpoint = "http://https://773a-2804-7f4-3d42-75f3-5010-445c-9aa8-70d.ngrok-free.app/conversar";
 
   try {
     const res = await fetch(endpoint, {
@@ -22,7 +22,7 @@ form.onsubmit = async (e) => {
     const data = await res.json();
     showMessage(data.resposta || "[sem resposta]", "bot");
     chat.scrollTop = chat.scrollHeight;
-  } catch (err) {
+  } catch {
     showMessage("❌ Erro ao conectar com Luzia.Local", "bot");
   }
 };
