@@ -1,81 +1,113 @@
+/* estilo.css - Estilo simbólico e moderno para Luzia.Elysiun */
+
 body {
   margin: 0;
-  background: #fdf6fa;
-  font-family: 'Inter', Arial, sans-serif;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #ffe6f0, #f0f8ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
-.chat-root {
-  max-width: 420px;
-  margin: 32px auto;
-  background: #fff;
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  background: white;
   border-radius: 16px;
-  box-shadow: 0 2px 28px #0001;
-  padding: 18px 10px 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
-.chat-header {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 10px;
-}
-.logo {
-  width: 54px;
-  border-radius: 10px;
-  box-shadow: 0 1px 5px #0001;
-}
-.chat-header h1 {
-  color: #d63384;
-  margin: 0 0 4px;
-  font-size: 1.5rem;
-}
-.chat-header p {
-  color: #8e44ad;
-  margin: 0;
-  font-size: 1rem;
-}
-.chat-history {
-  background: #f9f6fb;
-  border-radius: 8px;
-  border: 1px solid #eee;
-  min-height: 150px;
-  max-height: 260px;
-  overflow-y: auto;
-  margin-bottom: 12px;
-  padding: 10px;
-  font-size: 1rem;
-}
-.msg {
-  margin-bottom: 8px;
-}
-.msg.user strong { color: #e17055; }
-.msg.bot strong { color: #6c3483; }
-.chat-form {
-  display: flex;
-}
-#prompt {
-  flex: 1;
-  padding: 12px 13px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  outline: none;
-  transition: border-color 0.2s;
-}
-#prompt:focus { border-color: #e17055; }
-button[type='submit'] {
-  margin-left: 7px;
-  padding: 0 18px;
-  border: none;
-  border-radius: 8px;
-  background: #e17055;
+
+.header {
+  background: #ff69b4;
   color: white;
+  padding: 16px;
   font-size: 1.4rem;
-  cursor: pointer;
-  transition: background 0.15s;
+  text-align: center;
+  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
 }
-button[type='submit']:hover { background: #d63384; }
-.send-arrow { font-size: 1.2em; }
+
+.header img {
+  height: 32px;
+  transform: rotate(-10deg);
+}
+
+.chat {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #fff6fa;
+}
+
+.message {
+  max-width: 75%;
+  padding: 12px 16px;
+  border-radius: 16px;
+  font-size: 1rem;
+  line-height: 1.4;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user {
+  align-self: flex-end;
+  background: #dff6ff;
+  color: #004a66;
+}
+
+.luzia {
+  align-self: flex-start;
+  background: #ffd3e0;
+  color: #662244;
+}
+
+.input-container {
+  display: flex;
+  border-top: 1px solid #eee;
+  background: white;
+  padding: 12px;
+}
+
+input[type="text"] {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  outline: none;
+}
+
+button {
+  margin-left: 10px;
+  background: #ff69b4;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #ff4fa4;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffc0cb;
+  border-radius: 3px;
+}
