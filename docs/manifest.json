@@ -1,11 +1,15 @@
 {
-  "name": "Luzia.Elysiun",
+  "name": "Luzia.Local",
   "short_name": "Luzia",
-  "icons": [
-    { "src": "assets/logo.png", "sizes": "128x128", "type": "image/png" }
-  ],
-  "start_url": "./index.html",
+  "start_url": "index.html",
   "display": "standalone",
-  "theme_color": "#d63384",
-  "background_color": "#fdf6fa"
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "assets/logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
 }
